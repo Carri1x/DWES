@@ -1,0 +1,22 @@
+{
+    "name": "alvaro/proyecto1",
+    "description": "Hola",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Alvaro\\Proyecto1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alvaro"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ramsey/uuid": "^4.9",
+        "nesbot/carbon": "^3.10",
+        "phroute/phroute": "^2.2",
+        "hackzilla/password-generator": "^1.7"
+    }
+}
