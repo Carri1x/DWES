@@ -39,6 +39,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 WORKDIR /var/www/html
 
+RUN useradd ciclost && usermod -aG sudo ciclost
+
+
 #Intalación de Composer
 COPY --from=composer:2.8.11 /usr/bin/composer /usr/local/bin/composer
 

@@ -16,7 +16,7 @@ $router -> get('/admin', function (){
     include_once "views/indice.php";
 });
 
-$router -> get('/pass', function (){
+/*$router -> get('/pass', function (){
     if(!isset($_GET['numeros']) && !isset($_GET['letras'])){
         echo 'Tienes que pasar por parámetro los numeros y letras';
     } else {
@@ -25,6 +25,22 @@ $router -> get('/pass', function (){
         include_once './auxiliar/funciones.php';
         echo generarPassword($cantNumeros, $cantLetras);
     }
+});*/
+
+$router -> get('/pass', function () {
+    if (!isset($_GET['numeros']) && !isset($_GET['letras'])) {
+        return 'Tienes que pasar por parámetro los numeros y letras';
+    }
+        $cantNumeros = $_GET['numeros'];
+        $cantLetras = $_GET['letras'];
+        include_once './auxiliar/funciones.php';
+        $password = generarPassword($cantNumeros, $cantLetras);
+
+        include_once './views/password.php';
+});
+
+$router -> post('/form-pelicula', function(){
+
 });
 
 //Resolver la ruta que debemos cargar.
