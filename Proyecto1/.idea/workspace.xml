@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/password.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/template/form-pelicula.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/php/php.ini-development" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/php.ini-development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/class/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enum/TipoUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auxiliar/funciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/auxiliar/funciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/template/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/template/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/template/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/template/sidebar.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,11 +193,25 @@
       <workItem from="1759502910880" duration="3257000" />
       <workItem from="1759934105851" duration="1699000" />
       <workItem from="1759943323277" duration="5392000" />
-      <workItem from="1760363461533" duration="8485000" />
+      <workItem from="1760363461533" duration="8551000" />
+      <workItem from="1760455548978" duration="1146000" />
     </task>
+    <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
+      <option name="closed" value="true" />
+      <created>1760381097482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760381097482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Añadidas algunas cosas...." />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadidas algunas cosas...." />
   </component>
 </project>
