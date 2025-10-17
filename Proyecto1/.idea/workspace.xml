@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="creadas algunas clases">
-      <change afterPath="$PROJECT_DIR$/.docker/apache/apache2.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Controller/DirectorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Interface/ControllerInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/class/Director.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/class/Series.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/Dockerfile" afterDir="false" />
+    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="creadas algunas clases, y modificaciones he historias">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controller/DirectorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/DirectorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/class/Director.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/Director.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/class/Series.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/Series.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auxiliar/funciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Auxiliar/funciones.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enum/TipoUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,14 +93,15 @@
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ciclost/Documentos/desarrollo-web-entorno-servidor/Proyecto1/src/views/template/js",
+    "last_opened_file_path": "/home/ciclost/Documentos/desarrollo-web-entorno-servidor/Proyecto1/src",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -122,11 +121,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/ejemplos" />
       <recent name="$PROJECT_DIR$/src/views" />
       <recent name="$PROJECT_DIR$/src/view" />
-      <recent name="$PROJECT_DIR$/src/template" />
     </key>
   </component>
   <component name="RunManager" selected="Docker. docker-compose.yml: Compose Deployment">
@@ -207,7 +206,7 @@
       <workItem from="1759943323277" duration="5392000" />
       <workItem from="1760363461533" duration="8551000" />
       <workItem from="1760455548978" duration="3027000" />
-      <workItem from="1760710257823" duration="4644000" />
+      <workItem from="1760710257823" duration="6293000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -233,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760456715498</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="creadas algunas clases, y modificaciones he historias">
+      <option name="closed" value="true" />
+      <created>1760715207980</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760715207980</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +249,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Añadidas algunas cosas...." />
     <MESSAGE value="creadas algunas clases" />
-    <option name="LAST_COMMIT_MESSAGE" value="creadas algunas clases" />
+    <MESSAGE value="creadas algunas clases, y modificaciones he historias" />
+    <option name="LAST_COMMIT_MESSAGE" value="creadas algunas clases, y modificaciones he historias" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

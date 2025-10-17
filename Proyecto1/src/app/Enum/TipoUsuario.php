@@ -1,6 +1,6 @@
 <?php
 
-namespace app\enum;
+namespace App\Enum;
 
 enum TipoUsuario
 {

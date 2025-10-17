@@ -4,6 +4,7 @@ include_once "env.php";
 //Directiva para insertar o utilizar la clase RouteCollector (End Points).
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
+use App\Controller\DirectorController;
 
 $router = new RouteCollector();
 //Definir las rutas de mi aplicación.
@@ -62,7 +63,7 @@ $router -> post('/movie/create', [MovieController::class,'create']);
 $router -> post('/movie/{id}/edit', [MovieController::class,'edit']);
 
 //Rutas de Director CRUD
-$router-> get('/director', [\App\Controller\DirectorController::class, 'index']);
+$router-> get('/director', [DirectorController::class, 'index']);
 $router-> get('director/{id}', [DirectorController::class, 'show']);
 $router-> post('/director', [DirectorController::class,'store']);
 $router-> put('/director/{id}', [DirectorController::class,'update']);
