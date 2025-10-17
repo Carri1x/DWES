@@ -43,6 +43,32 @@ $router -> post('/form-pelicula', function(){
 
 });
 
+$router->get('/user',[UserController::class, 'index']);
+$router -> get('/user/{id}',[UserController::class,'show']);
+$router -> post('/user', [UserController::class,'store']);
+$router -> put('/user',[UserController::class,'update']);
+$router -> delete('/user',[UserController::class,'destroy']);
+
+$router -> post('/user/create', [UserController::class,'create']);
+$router -> post('/user/{id}/edit', [UserController::class,'edit']);
+
+$router->get('/movie',[MovieController::class, 'index']);
+$router -> get('/movie/{id}', [MovieController::class,'show']);
+$router -> post('/movie', [MovieController::class,'store']);
+$router -> put('/movie',[MovieController::class,'update']);
+$router -> delete('/movie',[MovieController::class,'destroy']);
+
+$router -> post('/movie/create', [MovieController::class,'create']);
+$router -> post('/movie/{id}/edit', [MovieController::class,'edit']);
+
+//Rutas de Director CRUD
+$router-> get('/director', [\App\Controller\DirectorController::class, 'index']);
+$router-> get('director/{id}', [DirectorController::class, 'show']);
+$router-> post('/director', [DirectorController::class,'store']);
+$router-> put('/director/{id}', [DirectorController::class,'update']);
+$router-> delete('director/{id}', [DirectorController::class,'destroy']);
+
+
 //Resolver la ruta que debemos cargar.
 # NB. You can cache the return value from $router->getData() so you don't have to create the routes each request - massive speed gains
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
