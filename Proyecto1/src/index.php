@@ -2,6 +2,7 @@
 include_once "vendor/autoload.php";
 include_once "env.php";
 //Directiva para insertar o utilizar la clase RouteCollector (End Points).
+use App\Controller\UserController;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
 use App\Controller\DirectorController;
@@ -44,13 +45,15 @@ $router -> post('/form-pelicula', function(){
 
 });
 
+$router -> post('/user/create', [UserController::class,'create']);
+
 $router->get('/user',[UserController::class, 'index']);
 $router -> get('/user/{id}',[UserController::class,'show']);
 $router -> post('/user', [UserController::class,'store']);
 $router -> put('/user',[UserController::class,'update']);
 $router -> delete('/user',[UserController::class,'destroy']);
 
-$router -> post('/user/create', [UserController::class,'create']);
+
 $router -> post('/user/{id}/edit', [UserController::class,'edit']);
 
 $router->get('/movie',[MovieController::class, 'index']);

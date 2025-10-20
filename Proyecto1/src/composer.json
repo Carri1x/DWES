@@ -17,6 +17,7 @@
         "ramsey/uuid": "^4.9",
         "nesbot/carbon": "^3.10",
         "phroute/phroute": "^2.2",
-        "hackzilla/password-generator": "^1.7"
+        "hackzilla/password-generator": "^1.7",
+        "respect/validation": "^2.4"
     }
 }

@@ -32,6 +32,8 @@
       <path value="$PROJECT_DIR$/src/vendor/composer" />
       <path value="$PROJECT_DIR$/src/vendor/phroute/phroute" />
       <path value="$PROJECT_DIR$/src/vendor/hackzilla/password-generator" />
+      <path value="$PROJECT_DIR$/src/vendor/respect/validation" />
+      <path value="$PROJECT_DIR$/src/vendor/respect/stringifier" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2">

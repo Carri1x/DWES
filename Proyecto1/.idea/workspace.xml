@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="creadas algunas clases, y modificaciones he historias">
+      <change afterPath="$PROJECT_DIR$/src/app/Controller/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Model/UserModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Controller/DirectorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/DirectorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/Director.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/Director.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/Series.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/Series.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auxiliar/funciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Auxiliar/funciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enum/TipoUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +66,8 @@
       <path value="$PROJECT_DIR$/src/vendor/composer" />
       <path value="$PROJECT_DIR$/src/vendor/phroute/phroute" />
       <path value="$PROJECT_DIR$/src/vendor/hackzilla/password-generator" />
+      <path value="$PROJECT_DIR$/src/vendor/respect/validation" />
+      <path value="$PROJECT_DIR$/src/vendor/respect/stringifier" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -80,38 +81,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker. docker-compose.yml.openldap: Compose Deployment.executor": "Run",
-    "Docker. docker-compose.yml: Compose Deployment.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected": "true",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/ciclost/Documentos/desarrollo-web-entorno-servidor/Proyecto1/src",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "settings.editor.selected.configurable": "web-ide.project.structure",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker. docker-compose.yml.openldap: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker. docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected&quot;: &quot;true&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm&quot;: &quot;Docker&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm&quot;: &quot;Docker&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ciclost/Documentos/desarrollo-web-entorno-servidor/Proyecto1/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "redis",
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;redis&quot;,
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/views/template/js" />
@@ -206,7 +207,8 @@
       <workItem from="1759943323277" duration="5392000" />
       <workItem from="1760363461533" duration="8551000" />
       <workItem from="1760455548978" duration="3027000" />
-      <workItem from="1760710257823" duration="6293000" />
+      <workItem from="1760710257823" duration="8164000" />
+      <workItem from="1760980694486" duration="5327000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -240,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760715207980</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="creadas algunas clases, y modificaciones he historias">
+      <option name="closed" value="true" />
+      <created>1760718009730</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760718009730</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
