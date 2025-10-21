@@ -6,6 +6,7 @@ use App\Class\User;
 use App\Interface\ControllerInterface;
 use App\Model\UserModel;
 use Ramsey\Uuid\Uuid;
+use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator as Validator;
 
 class UserController implements ControllerInterface
@@ -15,28 +16,27 @@ class UserController implements ControllerInterface
     {
 
         $usuarios = UserModel::getAllusers();
-        //return json_encode([$usuario, $usuario2]);
+        foreach ($usuarios as $usuario) {
+            var_dump($usuario);
+        }
     }
 
     function show($id)
     {
-        // TODO: Implement show() method.
+        //TODO: Method to implement.
     }
 
     function store()
     {
-        Validator::key('username', Validator::stringType())
-            ->key('password', Validator::password()->length(3,16))
-            ->key('email', Validator::email())
-            ->key('edad', Validator::intType()->min(18))
-            ->key('type', Validator::in(["normal", "anuncios", "admin"]))
-            ->assert($_POST); // You can also use check() or isValid()
+        $user = User::validateUser($_POST);
+        var_dump($user);
         return "";
     }
 
     function update($id)
     {
-        // TODO: Implement update() method.
+        parse_str(file_get_contents("php://input"),$editData);
+        var_dump($editData);
     }
 
     function destroy()

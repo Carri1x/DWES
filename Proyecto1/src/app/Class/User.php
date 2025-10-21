@@ -6,6 +6,8 @@ namespace App\Class;
 use App\Enum\TipoUsuario;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use Respect\Validation\Exceptions\NestedValidationException;
+use Respect\Validation\Validator as Validator;
 
 class User implements \JsonSerializable
 {
@@ -112,5 +114,31 @@ class User implements \JsonSerializable
             "visualizaciones" => $this->visualizaciones,
             "tipo" => $this->tipo->name,
         ];
+    }
+
+    public static function validateUser(array $data): User | array
+    {
+        try {
+            Validator::key('username', Validator::stringType())
+                ->key('password', Validator::password()->length(3, 16))
+                ->key('email', Validator::email())
+                ->key('edad', Validator::intVal()->min(18))
+                ->key('type', Validator::in(["normal", "anuncios", "admin"]))
+                ->assert($_POST); // You can also use check() or isValid()
+        } catch (NestedValidationException $errores) {
+            //var_dump($errores->getMessages());
+            foreach ($errores->getMessages() as $message) {
+                echo "$message</br>";
+            }
+        }
+        $uuid = Uuid::uuid4();
+        $usuario = new User(
+            $uuid,
+            $data['username'],
+            $data['password'],
+            $data['email'],
+            TipoUsuario::stringToUserType($data['tipo'])
+        );
+        return $usuario->setEdad($data['edad']);
     }
 }
