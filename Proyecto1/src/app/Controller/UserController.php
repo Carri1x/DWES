@@ -15,10 +15,11 @@ class UserController implements ControllerInterface
     function index()
     {
 
-        $usuarios = UserModel::getAllusers();
+        $usuarios = UserModel::getAllUsers();
         foreach ($usuarios as $usuario) {
             var_dump($usuario);
         }
+        return $usuarios;
     }
 
     function show($id)
@@ -28,7 +29,7 @@ class UserController implements ControllerInterface
 
     function store()
     {
-        $user = User::validateUser($_POST);
+        $user = User::validateUserCreation($_POST);
         var_dump($user);
         return "";
     }
@@ -36,6 +37,7 @@ class UserController implements ControllerInterface
     function update($id)
     {
         parse_str(file_get_contents("php://input"),$editData);
+        $usuario = User::validateUserEdit($editData);
         var_dump($editData);
     }
 
@@ -52,5 +54,13 @@ class UserController implements ControllerInterface
     function edit($id)
     {
         // TODO: Implement edit() method.
+    }
+
+    function verify(){
+        $_POST['username'];
+        $_POST['password'];
+
+        //Si es correcto el Login..
+        $_SESSION['username'] = $_POST['username'];
     }
 }

@@ -31,7 +31,7 @@ $router -> get('/admin', function (){
 
 $router -> get('/pass', function () {
     if (!isset($_GET['numeros']) && !isset($_GET['letras'])) {
-        return 'Tienes que pasar por parámetro los numeros y letras';
+        return 'Tienes que pasar por parámetro los numeros y letras.';
     }
         $cantNumeros = $_GET['numeros'];
         $cantLetras = $_GET['letras'];
@@ -44,6 +44,11 @@ $router -> get('/pass', function () {
 $router -> post('/form-pelicula', function(){
 
 });
+
+//----------------------------------------------------------------------------------
+
+$router -> get('login', [UserController::class, 'showLogin']);
+$router->post('verify', [UserLogin::class, 'verify']);
 
 $router -> post('/user/create', [UserController::class,'create']);
 

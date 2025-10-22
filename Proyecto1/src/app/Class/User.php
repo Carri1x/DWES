@@ -116,7 +116,7 @@ class User implements \JsonSerializable
         ];
     }
 
-    public static function validateUser(array $data): User | array
+    public static function validateUserCreation(array $data): User | array
     {
         try {
             Validator::key('username', Validator::stringType())
@@ -140,5 +140,29 @@ class User implements \JsonSerializable
             TipoUsuario::stringToUserType($data['tipo'])
         );
         return $usuario->setEdad($data['edad']);
+    }
+
+    public static function validateUserEdit(array $data): User|array{
+        try {
+            Validator::key('uuid', Validator::uuid())
+                ->optional(Validator::key('username', Validator::stringType()))
+                ->optional(Validator::key('password', Validator::password()->length(3, 16)))
+                ->optional(Validator::key('email', Validator::email()))
+                ->optional(Validator::key('edad', Validator::intVal()->min(18)))
+                ->optional(Validator::key('type', Validator::in(["normal", "anuncios", "admin"])))
+                ->key(assert($_POST)); // You can also use check() or isValid()
+        } catch (NestedValidationException $errores) {
+            //var_dump($errores->getMessages());
+            foreach ($errores->getMessages() as $message) {
+                echo "$message</br>";
+            }
+        }
+
+        //TODO Buscar el usuario en la base de datos y luego modificarlo.
+        return new User(Uuid::fromString($data['uuid']),
+        $data['username'],
+        '1234',
+        'alvaro@gmail.com',
+        TipoUsuario::stringToUserType($data['tipo']));
     }
 }

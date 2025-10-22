@@ -7,7 +7,7 @@ use Ramsey\Uuid\Uuid;
 
 class UserModel
 {
-    public static function getAllusers():array{
+    public static function getAllUsers():array{
         return [
             new User(
                 Uuid::uuid4(),
