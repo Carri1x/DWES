@@ -11,7 +11,7 @@ $router = new RouteCollector();
 //Definir las rutas de mi aplicación.
 
 $router-> get('/', function (){
-   return "Estoy en la página de principal";
+   return "Estoy en la página de principal ";
 });
 
 $router -> get('/admin', function (){
@@ -46,10 +46,13 @@ $router -> post('/form-pelicula', function(){
 });
 
 //----------------------------------------------------------------------------------
+//---------- Practica hacer login y registrar NETFLIX ------------
+$router -> get('/login', [UserController::class, 'show_login']);
+$router->post('/user/login', [UserController::class, 'verify']);
 
-$router -> get('login', [UserController::class, 'showLogin']);
-$router->post('verify', [UserLogin::class, 'verify']);
-
+$router -> get('/register', [UserController::class, 'show_register']);
+$router -> post('/user/register', [UserController::class, 'register']);
+//----------------------------------------------------------------------------------
 $router -> post('/user/create', [UserController::class,'create']);
 
 $router->get('/user',[UserController::class, 'index']);

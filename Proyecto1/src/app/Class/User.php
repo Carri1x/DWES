@@ -128,7 +128,7 @@ class User implements \JsonSerializable
         } catch (NestedValidationException $errores) {
             //var_dump($errores->getMessages());
             foreach ($errores->getMessages() as $message) {
-                echo "$message</br>";
+                var_dump($message);
             }
         }
         $uuid = Uuid::uuid4();

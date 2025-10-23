@@ -1,6 +1,22 @@
 <?php
-const DIRECTORIO_TEMPLATE = __DIR__."/views/template";
-const DIRECTORIO_CSS = "/views/template/css/";
-const DIRECTORIO_IMG = __DIR__."/views/template/img";
+//Aquí están las anteriores constantes de Miguel Ángel
 
-const DIRECTORIO_JS = "/views/template/js/";
+/*const DIRECTORIO_TEMPLATE = "views/template/";
+const DIRECTORIO_VISTAS = "views/";
+const DIRECTORIO_VISTAS_ADMINISTRACION = "Admin/views/";
+const DIRECTORIO_TEMPLATE_ADMINISTRACION = "/Admin/views/template/";
+const DIRECTORIO_CSS = "app/Views/frontend/template/css/";
+const DIRECTORIO_IMG = "app/Views/frontend/template/img/";*/
+
+const DIRECTORIO_VISTAS_FRONTEND= "app/Views/frontend/";
+const DIRECTORIO_TEMPLATE_FRONTEND= DIRECTORIO_VISTAS_FRONTEND."template/";
+const DIRECTORIO_CSS_FRONTEND= DIRECTORIO_TEMPLATE_FRONTEND."css/";
+const DIRECTORIO_IMG_FRONTEND= DIRECTORIO_TEMPLATE_FRONTEND."img/";
+const  DIRECTORIO_JS_FRONTEND = DIRECTORIO_TEMPLATE_FRONTEND."js/";
+
+
+const DIRECTORIO_VISTAS_BACKEND = "app/Views/backend/";
+const DIRECTORIO_TEMPLATE_BACKEND= DIRECTORIO_VISTAS_BACKEND."template/";
+const DIRECTORIO_CSS_BACKEND= DIRECTORIO_TEMPLATE_BACKEND."css/";
+const DIRECTORIO_IMG_BACKEND= DIRECTORIO_TEMPLATE_BACKEND."img/";
+const DIRECTORIO_JS_BACKEND= DIRECTORIO_TEMPLATE_BACKEND."js/";

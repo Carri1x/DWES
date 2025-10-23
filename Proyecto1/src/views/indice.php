@@ -1,11 +1,13 @@
 <?php
-$titulo = "DWES";
-include_once 'template/head.php';
-include_once 'template/header.php';
-include_once 'template/sidebar.php';
+$titulo = "Generar Contraseña";
+include "template/head.php";
+include "template/header.php";
+include "template/subheader.php";
 ?>
-
-<p>Estás en la página índice.php</p>
+    <!--HTML personalizado para mi página-->
+    <div class="texto">
+        <h1>Generador de constraseñas</h1>
+    </div>
 
 <?php
-include_once 'template/footer.php';
+include "template/footer.php";

@@ -57,10 +57,25 @@ class UserController implements ControllerInterface
     }
 
     function verify(){
-        $_POST['username'];
-        $_POST['password'];
+        /*$_POST['username'];
+        $_POST['password'];*/
+
+        var_dump($_POST);
 
         //Si es correcto el Login..
         $_SESSION['username'] = $_POST['username'];
+        var_dump($_SESSION['username']);
+    }
+
+    function show_login(){
+        include_once "app/Views/frontend/login.php";
+    }
+
+    function show_register(){
+        include_once "app/Views/frontend/register.php";
+    }
+
+    function register(){
+        var_dump($_POST);
     }
 }
