@@ -120,16 +120,16 @@ class User implements \JsonSerializable
     {
         try {
             Validator::key('username', Validator::stringType())
-                ->key('password', Validator::password()->length(3, 16))
+                ->key('password', Validator::stringType()->length(3, 16))
                 ->key('email', Validator::email())
                 ->key('edad', Validator::intVal()->min(18))
                 ->key('type', Validator::in(["normal", "anuncios", "admin"]))
                 ->assert($_POST); // You can also use check() or isValid()
         } catch (NestedValidationException $errores) {
-            //var_dump($errores->getMessages());
             foreach ($errores->getMessages() as $message) {
                 var_dump($message);
             }
+            return [];
         }
         $uuid = Uuid::uuid4();
         $usuario = new User(
@@ -137,7 +137,7 @@ class User implements \JsonSerializable
             $data['username'],
             $data['password'],
             $data['email'],
-            TipoUsuario::stringToUserType($data['tipo'])
+            TipoUsuario::stringToUserType($data['type'])
         );
         return $usuario->setEdad($data['edad']);
     }

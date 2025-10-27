@@ -52,6 +52,7 @@ $router->post('/user/login', [UserController::class, 'verify']);
 
 $router -> get('/register', [UserController::class, 'show_register']);
 $router -> post('/user/register', [UserController::class, 'register']);
+$router -> get('/logout', [UserController::class, 'logout']);
 //----------------------------------------------------------------------------------
 $router -> post('/user/create', [UserController::class,'create']);
 
