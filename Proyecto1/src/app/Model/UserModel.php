@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Class\User;
+use App\Enum\TipoUsuario;
 use Ramsey\Uuid\Uuid;
 
 class UserModel
@@ -22,5 +23,17 @@ class UserModel
                 "aure@gmail.com",
             )
         ];
+    }
+
+    public static function getUserById(string $id):User{
+        $usuario = new User(
+            Uuid::fromString($id),
+            "Pablo",
+            "1234",
+            "pablou@gmail.com",
+            TipoUsuario::NORMAL
+        );
+        $usuario -> setEdad(18);
+        return $usuario;
     }
 }

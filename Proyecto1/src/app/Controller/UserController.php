@@ -14,12 +14,8 @@ class UserController implements ControllerInterface
 
     function index()
     {
-
         $usuarios = UserModel::getAllUsers();
-        foreach ($usuarios as $usuario) {
-            var_dump($usuario);
-        }
-        return $usuarios;
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/allusers.php';
     }
 
     function show($id)
@@ -58,7 +54,11 @@ class UserController implements ControllerInterface
 
     function edit($id)
     {
-        // TODO: Implement edit() method.
+        //Recuperar los datos de un usuario del Modelo.
+        $usuario = UserModel::getUserById($id);
+
+        //Llamar a la vista que muestre los datos del usuario
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/editUsers.php';
     }
 
     function verify(){

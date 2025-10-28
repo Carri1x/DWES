@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="Login y registro hechos, por hacer bien el frontend">
-      <change afterPath="$PROJECT_DIR$/src/app/Views/frontend/inicio.php" afterDir="false" />
+    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="UserController.php -&gt; register() está cogiendo forma, ir modificando...">
+      <change afterPath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/frontend/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/frontend/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/js/bootstrap.bundle.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,11 +126,11 @@
       <recent name="$PROJECT_DIR$/src/views/template/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/Views/backend/template/js" />
+      <recent name="$PROJECT_DIR$/src/app/Views/backend/template/css" />
       <recent name="$PROJECT_DIR$/src/app/Views/frontend" />
       <recent name="$PROJECT_DIR$/src/app/Views/backend" />
       <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/ejemplos" />
     </key>
   </component>
   <component name="RunManager" selected="Docker. docker-compose.yml: Compose Deployment">
@@ -212,7 +218,8 @@
       <workItem from="1761231619512" duration="7347000" />
       <workItem from="1761573837597" duration="496000" />
       <workItem from="1761574345788" duration="37000" />
-      <workItem from="1761589359812" duration="4771000" />
+      <workItem from="1761589359812" duration="4875000" />
+      <workItem from="1761667348861" duration="3425000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -286,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761239886062</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="UserController.php -&gt; register() está cogiendo forma, ir modificando...">
+      <option name="closed" value="true" />
+      <created>1761594222309</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1761594222309</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +326,8 @@
     <MESSAGE value="Mejora de validator alguna función de UserController" />
     <MESSAGE value="validateUserEdit" />
     <MESSAGE value="Login y registro hechos, por hacer bien el frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login y registro hechos, por hacer bien el frontend" />
+    <MESSAGE value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
+    <option name="LAST_COMMIT_MESSAGE" value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

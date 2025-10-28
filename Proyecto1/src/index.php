@@ -50,10 +50,18 @@ $router -> post('/form-pelicula', function(){
 $router -> get('/login', [UserController::class, 'show_login']);
 $router->post('/user/login', [UserController::class, 'verify']);
 
+//Registrar al usuario primero enseñarle la vista registro
 $router -> get('/register', [UserController::class, 'show_register']);
+//Si ha ido todu bien enviarlo a la vista que se ha registrado
 $router -> post('/user/register', [UserController::class, 'register']);
+
+//Logearlo
 $router -> get('/logout', [UserController::class, 'logout']);
 //----------------------------------------------------------------------------------
+
+
+
+
 $router -> post('/user/create', [UserController::class,'create']);
 
 $router->get('/user',[UserController::class, 'index']);
