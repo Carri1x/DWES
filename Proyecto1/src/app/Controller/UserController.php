@@ -24,7 +24,12 @@ class UserController implements ControllerInterface
 
     function show($id)
     {
-        //TODO: Method to implement.
+        if(isset($_SESSION['username'])){
+            //Muestra la vista con los datos del usuario.
+        } else {
+            //Muestra una vista de no se puede acceder a estos datos.
+        }
+        return "Estos son los datos del usuario $id";
     }
 
     function store()
@@ -76,6 +81,28 @@ class UserController implements ControllerInterface
     }
 
     function register(){
-        var_dump($_POST);
+        //var_dump($_POST);
+        $usuario = User::validateUserCreation($_POST);
+        if($usuario == []){
+            echo "Lo siento te has flipado con los datos";
+            return ;
+        }
+        $_SESSION["username"] = $usuario->getUsername();
+        $type = $usuario->getTipo()->name;
+        if($type == "ADMIN"){
+            include_once DIRECTORIO_VISTAS_BACKEND."inicio.php";
+            echo 'eres admin';
+        } elseif ($type == "ANUNCIOS"){
+            include_once DIRECTORIO_VISTAS_BACKEND."inicio.php";
+            echo 'eres de anuncios';
+        } else {
+            include_once DIRECTORIO_VISTAS_FRONTEND."inicio.php";
+            echo 'eres normal';
+        }
+        //include_once DIRECTORIO_TEMPLATE_FRONTEND."inicio.php";
+    }
+
+    function logout(){
+        session_destroy();
     }
 }
