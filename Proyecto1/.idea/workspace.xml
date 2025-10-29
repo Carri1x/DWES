@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="UserController.php -&gt; register() está cogiendo forma, ir modificando...">
-      <change afterPath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" afterDir="false" />
+    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="Modificación env.php | muevo las clases css js de backend | Creo allusers.php">
+      <change beforePath="$PROJECT_DIR$/../EjemplosPHP25-26" beforeDir="false" afterPath="$PROJECT_DIR$/../EjemplosPHP25-26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Model/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/css/bootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/css/bootstrap.rtl.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +37,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -219,7 +218,9 @@
       <workItem from="1761573837597" duration="496000" />
       <workItem from="1761574345788" duration="37000" />
       <workItem from="1761589359812" duration="4875000" />
-      <workItem from="1761667348861" duration="3425000" />
+      <workItem from="1761667348861" duration="4171000" />
+      <workItem from="1761761828522" duration="1841000" />
+      <workItem from="1761763681771" duration="579000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -301,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761594222309</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Modificación env.php | muevo las clases css js de backend | Creo allusers.php">
+      <option name="closed" value="true" />
+      <created>1761673106683</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761673106683</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +336,8 @@
     <MESSAGE value="validateUserEdit" />
     <MESSAGE value="Login y registro hechos, por hacer bien el frontend" />
     <MESSAGE value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
-    <option name="LAST_COMMIT_MESSAGE" value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
+    <MESSAGE value="Modificación env.php | muevo las clases css js de backend | Creo allusers.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificación env.php | muevo las clases css js de backend | Creo allusers.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -55,7 +55,7 @@ $router -> get('/register', [UserController::class, 'show_register']);
 //Si ha ido todu bien enviarlo a la vista que se ha registrado
 $router -> post('/user/register', [UserController::class, 'register']);
 
-//Logearlo
+//Deslogearlo
 $router -> get('/logout', [UserController::class, 'logout']);
 //----------------------------------------------------------------------------------
 

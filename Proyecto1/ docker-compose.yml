@@ -8,7 +8,7 @@ services:
       context: ./.docker
       dockerfile: Dockerfile
     container_name: containerphp
-    user: acarr:acarr
+    user: ciclost:ciclost
     #Crear un volumen para almacenar /home/ciclost/Documentos/desarrollo-web-entorno-servidor/Proyecto1mi página web
     volumes:
       - ./src:/var/www/html

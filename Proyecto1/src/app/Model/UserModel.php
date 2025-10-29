@@ -12,7 +12,7 @@ class UserModel
         return [
             new User(
                 Uuid::uuid4(),
-                "Pablo",
+                "Pab",
                 "1234",
                 "pablito@gmail.com",
             ),
