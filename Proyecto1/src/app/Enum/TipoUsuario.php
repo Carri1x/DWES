@@ -16,4 +16,8 @@ enum TipoUsuario
             default=>TipoUsuario::NORMAL
         };
     }
+
+    public static function getAllTipos(): array {
+        return array_map(fn($case) => $case->name, self::cases());
+    }
 }

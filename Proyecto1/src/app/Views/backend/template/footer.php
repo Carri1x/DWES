@@ -2,7 +2,7 @@
 </div>
 </div>
 <script
-    src="template/dist/js/bootstrap.bundle.min.js"
+    src="<?=DIRECTORIO_JS_BACKEND?>bootstrap.bundle.min.js"
     class="astro-vvvwv3sm"
 ></script>
 <script

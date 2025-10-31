@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="Modificación env.php | muevo las clases css js de backend | Creo allusers.php">
+    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML">
+      <change afterPath="$PROJECT_DIR$/src/app/Views/backend/User/useredit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EjemplosPHP25-26" beforeDir="false" afterPath="$PROJECT_DIR$/../EjemplosPHP25-26" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
@@ -125,11 +126,11 @@
       <recent name="$PROJECT_DIR$/src/views/template/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/Views/backend/User" />
       <recent name="$PROJECT_DIR$/src/app/Views/backend/template/js" />
       <recent name="$PROJECT_DIR$/src/app/Views/backend/template/css" />
       <recent name="$PROJECT_DIR$/src/app/Views/frontend" />
       <recent name="$PROJECT_DIR$/src/app/Views/backend" />
-      <recent name="$PROJECT_DIR$/src/app" />
     </key>
   </component>
   <component name="RunManager" selected="Docker. docker-compose.yml: Compose Deployment">
@@ -220,7 +221,8 @@
       <workItem from="1761589359812" duration="4875000" />
       <workItem from="1761667348861" duration="4171000" />
       <workItem from="1761761828522" duration="1841000" />
-      <workItem from="1761763681771" duration="579000" />
+      <workItem from="1761763681771" duration="711000" />
+      <workItem from="1761924748558" duration="8946000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -310,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761673106683</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML">
+      <option name="closed" value="true" />
+      <created>1761764370290</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761764370290</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +347,8 @@
     <MESSAGE value="Login y registro hechos, por hacer bien el frontend" />
     <MESSAGE value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
     <MESSAGE value="Modificación env.php | muevo las clases css js de backend | Creo allusers.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificación env.php | muevo las clases css js de backend | Creo allusers.php" />
+    <MESSAGE value="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML" />
+    <option name="LAST_COMMIT_MESSAGE" value="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

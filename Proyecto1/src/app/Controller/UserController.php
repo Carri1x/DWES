@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Class\User;
+use App\Enum\TipoUsuario;
 use App\Interface\ControllerInterface;
 use App\Model\UserModel;
 use Ramsey\Uuid\Uuid;
@@ -39,7 +40,8 @@ class UserController implements ControllerInterface
     {
         parse_str(file_get_contents("php://input"),$editData);
         $usuario = User::validateUserEdit($editData);
-        var_dump($editData);
+        $tipos = TipoUsuario::getAllTipos();
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/editusers.php';
     }
 
     function destroy()
@@ -56,9 +58,9 @@ class UserController implements ControllerInterface
     {
         //Recuperar los datos de un usuario del Modelo.
         $usuario = UserModel::getUserById($id);
-
+        $tipos = TipoUsuario::getAllTipos();
         //Llamar a la vista que muestre los datos del usuario
-        include_once DIRECTORIO_VISTAS_BACKEND.'User/editUsers.php';
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/useredit.php';
     }
 
     function verify(){
