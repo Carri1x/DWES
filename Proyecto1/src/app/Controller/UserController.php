@@ -29,11 +29,24 @@ class UserController implements ControllerInterface
         return "Estos son los datos del usuario $id";
     }
 
+    function createBackendUser(){
+        $tipos = TipoUsuario::getAllTipos();
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/createuser.php';
+    }
+    /**
+        Funcion que valida el usuario y lo inserta en la base de datos.+
+     */
     function store()
     {
         $user = User::validateUserCreation($_POST);
-        var_dump($user);
-        return "";
+        if(is_array($user)){
+
+        } else {
+            $user->setPassword(password_hash($user->getPassword(), PASSWORD_DEFAULT));
+            UserModel::saveUser($user);
+        }
+        $usuarios = UserModel::getAllUsers();
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/allusers.php';
     }
 
     function update($id)

@@ -8,8 +8,8 @@ enum TipoUsuario
     case ANUNCIOS;
     case ADMIN;
 
-    public static function stringToUserType(string $type) : TipoUsuario {
-        return match(strtolower($type)){
+    public static function stringToUserType(string $tipo) : TipoUsuario {
+        return match(strtolower($tipo)){
             "normal"=>TipoUsuario::NORMAL,
             "anuncios"=>TipoUsuario::ANUNCIOS,
             "admin"=>TipoUsuario::ADMIN,

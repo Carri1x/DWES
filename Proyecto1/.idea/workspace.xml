@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML">
-      <change afterPath="$PROJECT_DIR$/src/app/Views/backend/User/useredit.php" afterDir="false" />
+    <list default="true" id="cc0e8a3a-6354-4b6b-9f45-9ad4bffe96ff" name="Changes" comment="hecho desde getAllUsers con boton editar usuario hasta la pagina que enseña el usuario y sus atributos para luego ir al método / ruta que hace que se pueda cambiar el usuario, despues enseñarlo en la misma página. useredit.php">
+      <change afterPath="$PROJECT_DIR$/sql/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/Views/backend/User/createuser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EjemplosPHP25-26" beforeDir="false" afterPath="$PROJECT_DIR$/../EjemplosPHP25-26" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Class/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Class/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Enum/TipoUsuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/User/allusers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Views/backend/template/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/env.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Model/UserModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +220,8 @@
       <workItem from="1761667348861" duration="4171000" />
       <workItem from="1761761828522" duration="1841000" />
       <workItem from="1761763681771" duration="711000" />
-      <workItem from="1761924748558" duration="8946000" />
+      <workItem from="1761924748558" duration="10504000" />
+      <workItem from="1762193380252" duration="5803000" />
     </task>
     <task id="LOCAL-00001" summary="Añadidas algunas cosas....">
       <option name="closed" value="true" />
@@ -320,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761764370290</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="hecho desde getAllUsers con boton editar usuario hasta la pagina que enseña el usuario y sus atributos para luego ir al método / ruta que hace que se pueda cambiar el usuario, despues enseñarlo en la misma página. useredit.php">
+      <option name="closed" value="true" />
+      <created>1761935253667</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1761935253667</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +355,8 @@
     <MESSAGE value="UserController.php -&gt; register() está cogiendo forma, ir modificando..." />
     <MESSAGE value="Modificación env.php | muevo las clases css js de backend | Creo allusers.php" />
     <MESSAGE value="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML" />
-    <option name="LAST_COMMIT_MESSAGE" value="funciona la clase allusers.php || Perfecto las rutas de los componentes del HTML" />
+    <MESSAGE value="hecho desde getAllUsers con boton editar usuario hasta la pagina que enseña el usuario y sus atributos para luego ir al método / ruta que hace que se pueda cambiar el usuario, despues enseñarlo en la misma página. useredit.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="hecho desde getAllUsers con boton editar usuario hasta la pagina que enseña el usuario y sus atributos para luego ir al método / ruta que hace que se pueda cambiar el usuario, despues enseñarlo en la misma página. useredit.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

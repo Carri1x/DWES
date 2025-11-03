@@ -123,7 +123,7 @@ class User implements \JsonSerializable
                 ->key('password', Validator::stringType()->length(3, 16))
                 ->key('email', Validator::email())
                 ->key('edad', Validator::intVal()->min(18))
-                ->key('type', Validator::in(["normal", "anuncios", "admin"]))
+                ->key('tipo', Validator::in(["NORMAL", "ANUNCIOS", "ADMIN"]))
                 ->assert($_POST); // You can also use check() or isValid()
         } catch (NestedValidationException $errores) {
             foreach ($errores->getMessages() as $message) {
@@ -137,7 +137,7 @@ class User implements \JsonSerializable
             $data['username'],
             $data['password'],
             $data['email'],
-            TipoUsuario::stringToUserType($data['type'])
+            TipoUsuario::stringToUserType($data['tipo'])
         );
         return $usuario->setEdad($data['edad']);
     }
@@ -149,7 +149,7 @@ class User implements \JsonSerializable
                 ->optional(Validator::key('password', Validator::password()->length(3, 16)))
                 ->optional(Validator::key('email', Validator::email()))
                 ->optional(Validator::key('edad', Validator::intVal()->min(18)))
-                ->optional(Validator::key('type', Validator::in(["normal", "anuncios", "admin"])))
+                ->optional(Validator::key('tipo', Validator::in(["normal", "anuncios", "admin"])))
                 ->key(assert($_POST)); // You can also use check() or isValid()
         } catch (NestedValidationException $errores) {
             //var_dump($errores->getMessages());
@@ -164,5 +164,17 @@ class User implements \JsonSerializable
         '1234',
         'alvaro@gmail.com',
         TipoUsuario::stringToUserType($data['tipo']));
+    }
+
+    public static function createFromArray(array $data): User{
+        $uuid = Uuid::uuid4();
+        $usuario = new User(
+            $uuid,
+            $data['username'],
+            $data['password'],
+            $data['email'],
+            TipoUsuario::stringToUserType($data['tipo'])
+        );
+        return $usuario->setEdad($data['edad']);
     }
 }
