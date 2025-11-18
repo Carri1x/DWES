@@ -1,30 +1,108 @@
 <?php
-$titulo='Editar Usuario';
+$titulo = 'Editar Usuario';
 include_once DIRECTORIO_TEMPLATE_BACKEND.'head.php';
 include_once DIRECTORIO_TEMPLATE_BACKEND.'header.php';
 include_once DIRECTORIO_TEMPLATE_BACKEND.'aside.php';
 include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
 ?>
 
-<div class="card-body">
-    <form action="">
-        <h1 class="h1 card-title">Editar el usuario: <?=$usuario->getUsername()?></h1>
-        <label>Nombre: </label>
-        <input type="text" name="username" placeholder="<?=$usuario->getUsername()?>">
-        <label>Email: </label>
-        <input type="email" name="email" placeholder="<?=$usuario->getEmail()?>">
-        <label>Edad: </label>
-        <input type="text" name="edad" placeholder="<?=$usuario->getEdad()?>">
-        <label>Tipo de usuario: <?=$usuario->getTipo()->name?></label>
-        <select name="tipo">+
-            <?php //Aquí ponemos opciones del tipo de usuario dinámicamente.
-            foreach ($tipos as $tipo) { ?>
-            <option value="<?=$tipo?>"><?=$tipo?></option>
-            <?php
-            }
-            ?>
-        </select>
-    </form>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-person-lines-fill me-2"></i>Editar usuario
+                    </h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="/user/<?=$usuario->getUuid()?>" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-semibold">Nombre de usuario</label>
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="username"
+                                    name="username"
+                                    value="<?=$usuario->getUsername()?>"
+                                    placeholder="Introduce el nombre de usuario"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Correo electrónico</label>
+                            <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    value="<?=$usuario->getEmail()?>"
+                                    placeholder="usuario@correo.com"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edad" class="form-label fw-semibold">Edad</label>
+                            <input
+                                    type="number"
+                                    class="form-control"
+                                    id="edad"
+                                    name="edad"
+                                    value="<?=$usuario->getEdad()?>"
+                                    placeholder="Introduce la edad"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="tipo" class="form-label fw-semibold">Tipo de usuario</label>
+                            <select class="form-select" id="tipo" name="tipo">
+                                <?php foreach ($tipos as $tipo) { ?>
+                                    <option value="<?=$tipo?>"
+                                            <?= ($usuario->getTipo()->name == $tipo) ? 'selected' : '' ?>>
+                                        <?=$tipo?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="/users" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Volver
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save"></i> Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!--TODO: Aquí es donde tengo que hacer la petición put para modificar al usuario.-->
+<script type="module">
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    const urlencoded = new URLSearchParams();
+    urlencoded.append("username", document.getElementById("username").value);
+    urlencoded.append("email", document.getElementById("email").value);
+    urlencoded.append("edad", document.getElementById("edad").value);
+    urlencoded.append("tipo", document.getElementById("tipo").value);
+
+    const requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/user", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+</script>
 <?php
 include_once DIRECTORIO_TEMPLATE_BACKEND.'footer.php';
+

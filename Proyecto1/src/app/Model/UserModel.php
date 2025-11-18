@@ -35,17 +35,27 @@ class UserModel
         }
     }
 
-    public static function getUserById(string $id):User{
-        //TODO: implementarlo con la base de datos.
-        $usuario = new User(
-            Uuid::fromString($id),
-            "Pablo",
-            "1234",
-            "pablou@gmail.com",
-            TipoUsuario::NORMAL
-        );
-        $usuario -> setEdad(18);
-        return $usuario;
+    public static function getUserById(string $uuid):?User
+    {
+        try{
+            $conexion = new PDO("mysql:host=mariadb;dbname=proyecto1;","alvaro","alvaro");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e){
+            echo $e->getMessage();
+            return null;
+        }
+
+        $sql = "SELECT * FROM user WHERE uuid = :uuid";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(':uuid', $uuid);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($resultado){
+
+            return User::createFromArray($resultado);
+        } else {
+            return null;
+        }
     }
 
     public static function saveUser(User $user): bool{
@@ -76,6 +86,26 @@ class UserModel
         }
     }
 
+    public static function deleteUser(string $uuid): bool{
+        try{
+            $conexion = new PDO('mysql:host=mariadb;dbname=proyecto1;', "alvaro", "alvaro");
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }catch (PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+        $sql = "DELETE FROM user WHERE uuid = :uuid";
+        $stmt = $conexion->prepare($sql);
+        # $stmt->bindParam(':uuid', $uuid); Esta función hace que pueda cambiar el valor de uuid ¡Sirve para recorrer en un for!
+        $stmt->bindValue('uuid', $uuid);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){ //Si ha devuelto la información (fila) de que se ha eliminado el usuario.
+            return true;
+        } else {
+            return false; // No se ha podido eliminar al usuario.
+        }
+    }
 
     /*
     public static function getUserByUsername(string $username):User{

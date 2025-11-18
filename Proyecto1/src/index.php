@@ -49,6 +49,7 @@ $router -> post('/form-pelicula', function(){
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 //---------- Practica hacer login y registrar NETFLIX ------------
+//  FUNCIONA
 $router->get('/users',[UserController::class, 'index']); //GetAllUsers()
 
 
@@ -61,13 +62,16 @@ $router -> get('/register', [UserController::class, 'show_register']);
 $router -> post('/user/register', [UserController::class, 'register']);
 
 //Crear usuarios dentro del Backend (supuesto sitio Admin)
+//  FUNCIONA
 $router -> get('create/user', [UserController::class, 'createBackendUser']); //Enseñamos el form para crear el usuario.
+//  FUNCIONA
 $router -> post('create/user', [UserController::class, 'store']); //Hacemos comprobaciones para enviarlo a la base de datos.
 
 
 //Editar usuarios.
-$router->get('user/{id}/edit',[UserController::class, 'edit']); //Del GetAllUsers nos mandan un uuid que enseñamos aquí el formulario para editar al usuario.
-$router->post('user/{id}',[UserController::class, 'update']); //Recogemos los datos, los verificamos, editamos si está bien y enseñamos los datos (vista) del usuario editado.
+$router->get('user/{id}',[UserController::class, 'edit']); //Del GetAllUsers nos mandan un uuid que enseñamos aquí el formulario para editar al usuario.
+$router->put('user/{id}',[UserController::class, 'update']); //Recogemos los datos, los verificamos, editamos si está bien y enseñamos los datos (vista) del usuario editado.
+$router->delete('user/{id}',[UserController::class, 'destroy']); //Desde GetAllUsers nos mandan un uuid y borramos en la base de datos el usuario.
 
 //Deslogearlo
 $router -> get('/logout', [UserController::class, 'logout']);

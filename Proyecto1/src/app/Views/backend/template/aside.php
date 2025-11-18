@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center gap-2" href="/user">
+                        <a class="nav-link d-flex align-items-center gap-2" href="/users">
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#people"></use>
                             </svg>
@@ -70,11 +70,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center gap-2" href="#">
+                        <a class="nav-link d-flex align-items-center gap-2" href="/create/user">
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#puzzle"></use>
                             </svg>
-                            Integrations
+                            Crear Usuarios
                         </a>
                     </li>
                 </ul>

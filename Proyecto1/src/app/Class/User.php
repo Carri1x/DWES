@@ -142,32 +142,23 @@ class User implements \JsonSerializable
         return $usuario->setEdad($data['edad']);
     }
 
-    public static function validateUserEdit(array $data): User|array{
+    public static function validateUserEdit(array $data): array|false{
         try {
             Validator::key('uuid', Validator::uuid())
-                ->optional(Validator::key('username', Validator::stringType()))
-                ->optional(Validator::key('password', Validator::password()->length(3, 16)))
-                ->optional(Validator::key('email', Validator::email()))
-                ->optional(Validator::key('edad', Validator::intVal()->min(18)))
-                ->optional(Validator::key('tipo', Validator::in(["normal", "anuncios", "admin"])))
+                ->key('username', Validator::stringType(),false)
+                ->key('password', Validator::stringType()->length(3, 16),false)
+                ->key('email', Validator::email(),false)
+                ->key('edad', Validator::intVal()->min(18),false)
+                ->key('tipo', Validator::in(["normal", "anuncios", "admin"]),false)
                 ->key(assert($_POST)); // You can also use check() or isValid()
         } catch (NestedValidationException $errores) {
-            //var_dump($errores->getMessages());
-            foreach ($errores->getMessages() as $message) {
-                echo "$message</br>";
-            }
+            return $errores->getMessages();
         }
-
-        //TODO Buscar el usuario en la base de datos y luego modificarlo.
-        return new User(Uuid::fromString($data['uuid']),
-        $data['username'],
-        '1234',
-        'alvaro@gmail.com',
-        TipoUsuario::stringToUserType($data['tipo']));
+        return false; //Devolvemos el usuario con todos los datos comprobados.
     }
 
     public static function createFromArray(array $data): User{
-        $uuid = Uuid::uuid4();
+        $uuid = Uuid::fromString($data['uuid']); //Creo la interfaz del uuid que me venga como string.
         $usuario = new User(
             $uuid,
             $data['username'],

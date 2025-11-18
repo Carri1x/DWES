@@ -6,6 +6,7 @@ use App\Class\User;
 use App\Enum\TipoUsuario;
 use App\Interface\ControllerInterface;
 use App\Model\UserModel;
+use http\Exception\BadConversionException;
 use Ramsey\Uuid\Uuid;
 use Respect\Validation\Exceptions\NestedValidationException;
 use Respect\Validation\Validator as Validator;
@@ -48,18 +49,21 @@ class UserController implements ControllerInterface
         $usuarios = UserModel::getAllUsers();
         include_once DIRECTORIO_VISTAS_BACKEND.'User/allusers.php';
     }
-
-    function update($id)
+    function destroy($id)
     {
-        parse_str(file_get_contents("php://input"),$editData);
-        $usuario = User::validateUserEdit($editData);
-        $tipos = TipoUsuario::getAllTipos();
-        include_once DIRECTORIO_VISTAS_BACKEND.'User/editusers.php';
-    }
-
-    function destroy()
-    {
-        // TODO: Implement destroy() method.
+        $mensaje = '';
+        if(UserModel::deleteUser($id)){
+            $mensaje = 'El usuario se ha eliminado correctamente';
+        } else {
+            http_response_code(418);
+            return;
+        }
+        http_response_code(200);
+        return json_encode([
+            "error" => false,
+            "mensaje" => $mensaje,
+            "code" => 200
+        ]);
     }
 
     function create()
@@ -67,7 +71,34 @@ class UserController implements ControllerInterface
         // TODO: Implement create() method.
     }
 
-    function edit($id)
+    function update($id) //Este es la ruta ->>> post('user/{id}',[UserController::class, 'update']);
+    {
+        parse_str(file_get_contents("php://input"),$editData);
+        $editData["uuid"] = $id; //Insertamos el id dentro de editData para que no de error en validateUserEdit($editData);
+        var_dump($editData);
+
+        $errores = User::validateUserEdit($editData);
+        if(!$errores){ //Si no hay errores update user
+            $userDatabase = UserModel::getUserById($id); //Seleccionamos el usuario de la base de datos.
+
+            User::createFromArray($editData);
+        }else{
+            //Aquí tendría un error.
+            http_response_code(401);
+            return json_encode([
+                "errors" => true,
+                "messages" => $errores,
+                "code" => 401
+            ]);
+        }
+
+
+        $tipos = TipoUsuario::getAllTipos();
+        // Viene de la vista useredit... ahora toca modificar el usuario, subirlo y traerlo a la misma vista.
+
+        include_once DIRECTORIO_VISTAS_BACKEND.'User/useredit.php';
+    }
+    function edit($id) //Esta es la ruta ->>> get('user/{id}/edit',[UserController::class, 'edit']);
     {
         //Recuperar los datos de un usuario del Modelo.
         $usuario = UserModel::getUserById($id);
