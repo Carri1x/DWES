@@ -71,8 +71,10 @@ class UserController implements ControllerInterface
         // TODO: Implement create() method.
     }
 
-    function update($id) //Este es la ruta ->>> post('user/{id}',[UserController::class, 'update']);
+    function update($id) //Este es la ruta ->>> put('user/{id}',[UserController::class, 'update']);
     {
+        var_dump('Ha llegado dentro del método update');
+        var_dump($id);
         parse_str(file_get_contents("php://input"),$editData);
         $editData["uuid"] = $id; //Insertamos el id dentro de editData para que no de error en validateUserEdit($editData);
         var_dump($editData);
@@ -81,7 +83,9 @@ class UserController implements ControllerInterface
         if(!$errores){ //Si no hay errores update user
             $userDatabase = UserModel::getUserById($id); //Seleccionamos el usuario de la base de datos.
 
-            User::createFromArray($editData);
+            $usuario = User::createFromArray($editData);
+
+
         }else{
             //Aquí tendría un error.
             http_response_code(401);
@@ -92,12 +96,8 @@ class UserController implements ControllerInterface
             ]);
         }
 
-
-        $tipos = TipoUsuario::getAllTipos();
-        // Viene de la vista useredit... ahora toca modificar el usuario, subirlo y traerlo a la misma vista.
-
-        include_once DIRECTORIO_VISTAS_BACKEND.'User/useredit.php';
     }
+
     function edit($id) //Esta es la ruta ->>> get('user/{id}/edit',[UserController::class, 'edit']);
     {
         //Recuperar los datos de un usuario del Modelo.

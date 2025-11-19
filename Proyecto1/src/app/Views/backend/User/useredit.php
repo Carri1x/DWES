@@ -17,7 +17,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
                 </div>
 
                 <div class="card-body">
-                    <form action="/user/<?=$usuario->getUuid()?>" method="POST">
+                    <form>
                         <div class="mb-3">
                             <label for="username" class="form-label fw-semibold">Nombre de usuario</label>
                             <input
@@ -70,7 +70,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
                             <a href="/users" class="btn btn-outline-secondary">
                                 <i class="bi bi-arrow-left"></i> Volver
                             </a>
-                            <button type="submit" class="btn btn-success">
+                            <button id="boton-guardar-cambios" type="submit" class="btn btn-success">
                                 <i class="bi bi-save"></i> Guardar cambios
                             </button>
                         </div>
@@ -82,26 +82,31 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
 </div>
 <!--TODO: Aquí es donde tengo que hacer la petición put para modificar al usuario.-->
 <script type="module">
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-    const urlencoded = new URLSearchParams();
-    urlencoded.append("username", document.getElementById("username").value);
-    urlencoded.append("email", document.getElementById("email").value);
-    urlencoded.append("edad", document.getElementById("edad").value);
-    urlencoded.append("tipo", document.getElementById("tipo").value);
+    document.getElementById('boton-guardar-cambios').addEventListener('click', (evento) => {
+        evento.preventDefault();
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-    const requestOptions = {
-        method: "PUT",
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: "follow"
-    };
+        const urlencoded = new URLSearchParams();
+        urlencoded.append("username", document.getElementById("username").value);
+        urlencoded.append("email", document.getElementById("email").value);
+        urlencoded.append("edad", document.getElementById("edad").value);
+        urlencoded.append("tipo", document.getElementById("tipo").value);
 
-    fetch("http://localhost:8080/user", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.error(error));
+        const requestOptions = {
+            method: "PUT",
+            headers: myHeaders,
+            body: urlencoded,
+            redirect: "follow"
+        };
+
+        fetch("http://localhost:8080/user/<?=$usuario->getUuid()?>", requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
+    });
+
 </script>
 <?php
 include_once DIRECTORIO_TEMPLATE_BACKEND.'footer.php';

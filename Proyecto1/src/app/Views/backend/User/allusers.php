@@ -19,7 +19,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND . 'main.php';
                                 <p class="card-text text-muted mb-1"><?= htmlspecialchars($usuario->getEmail()) ?></p>
                                 <span class="badge bg-primary"><?= htmlspecialchars($usuario->getTipo()->name) ?></span>
                             </div>
-                            <form action="user/<?= $usuario->getUuid() ?>" method="GET">
+                            <form action="/user/<?= $usuario->getUuid() ?>" method="GET">
                                 <button type="submit" class="btn btn-outline-primary w-100">
                                     Editar usuario
                                 </button>
