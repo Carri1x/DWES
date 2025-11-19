@@ -86,18 +86,19 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
     document.getElementById('boton-guardar-cambios').addEventListener('click', (evento) => {
         evento.preventDefault();
         const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+        myHeaders.append("Content-Type", "application/json");
 
-        const urlencoded = new URLSearchParams();
-        urlencoded.append("username", document.getElementById("username").value);
-        urlencoded.append("email", document.getElementById("email").value);
-        urlencoded.append("edad", document.getElementById("edad").value);
-        urlencoded.append("tipo", document.getElementById("tipo").value);
+        const raw = JSON.stringify({
+            username: document.getElementById("username").value,
+            email: document.getElementById("email").value,
+            edad: document.getElementById("edad").value,
+            tipo: document.getElementById("tipo").value
+        });
 
         const requestOptions = {
             method: "PUT",
             headers: myHeaders,
-            body: urlencoded,
+            body: raw,
             redirect: "follow"
         };
 

@@ -73,19 +73,26 @@ class UserController implements ControllerInterface
 
     function update($id) //Este es la ruta ->>> put('user/{id}',[UserController::class, 'update']);
     {
-        var_dump('Ha llegado dentro del método update');
-        var_dump($id);
-        parse_str(file_get_contents("php://input"),$editData);
+        //var_dump('Ha llegado dentro del método update');
+        //var_dump($id);
+        //parse_str(file_get_contents("php://input"),$editData);
+        $editData = json_decode(file_get_contents("php://input"),true);
+
         $editData["uuid"] = $id; //Insertamos el id dentro de editData para que no de error en validateUserEdit($editData);
-        var_dump($editData);
+        //var_dump($editData);
 
         $errores = User::validateUserEdit($editData);
         if(!$errores){ //Si no hay errores update user
             $userDatabase = UserModel::getUserById($id); //Seleccionamos el usuario de la base de datos.
 
-            $usuario = User::createFromArray($editData);
+            $usuario = User::editFromArray($userDatabase,$editData);
 
-
+            //UserModel::updateUser($usuario);
+            http_response_code(201);
+            return json_encode([
+                "errors" => false,
+                "code" => 201
+            ]);
         }else{
             //Aquí tendría un error.
             http_response_code(401);

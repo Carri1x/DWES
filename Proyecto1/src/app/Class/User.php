@@ -149,8 +149,8 @@ class User implements \JsonSerializable
                 ->key('password', Validator::stringType()->length(3, 16),false)
                 ->key('email', Validator::email(),false)
                 ->key('edad', Validator::intVal()->min(18),false)
-                ->key('tipo', Validator::in(["normal", "anuncios", "admin"]),false)
-                ->key(assert($_POST)); // You can also use check() or isValid()
+                ->key('tipo', Validator::in(["NORMAL", "ANUNCIOS", "ADMIN"]),false)
+                ->assert($data); // You can also use check() or isValid()
         } catch (NestedValidationException $errores) {
             return $errores->getMessages();
         }
@@ -167,5 +167,17 @@ class User implements \JsonSerializable
             TipoUsuario::stringToUserType($data['tipo'])
         );
         return $usuario->setEdad($data['edad']);
+    }
+
+    public static function editFromArray(User $antiguoUsuario,array $nuevosDatos):?User{
+
+        $antiguoUsuario->setUsername($nuevosDatos['username']??$antiguoUsuario->getUsername());
+        $antiguoUsuario->setUsername($nuevosDatos['edad']??$antiguoUsuario->getEdad());
+        $antiguoUsuario->setUsername($nuevosDatos['tipo']??$antiguoUsuario->getTipo());
+        $antiguoUsuario->setUsername($nuevosDatos['email']??$antiguoUsuario->getEmail());
+        if (isset($nuevosDatos['password'])) {
+            $antiguoUsuario->setPassword(password_hash($nuevosDatos['password'],PASSWORD_DEFAULT));
+        }
+        return $antiguoUsuario;
     }
 }

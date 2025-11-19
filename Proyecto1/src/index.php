@@ -45,7 +45,7 @@ $router -> post('/form-pelicula', function(){
 
 });
 
-var_dump($_SERVER['REQUEST_METHOD']);
+//var_dump($_SERVER['REQUEST_METHOD']);
 //----------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------
 //---------- Practica hacer login y registrar NETFLIX ------------
