@@ -172,9 +172,9 @@ class User implements \JsonSerializable
     public static function editFromArray(User $antiguoUsuario,array $nuevosDatos):?User{
 
         $antiguoUsuario->setUsername($nuevosDatos['username']??$antiguoUsuario->getUsername());
-        $antiguoUsuario->setUsername($nuevosDatos['edad']??$antiguoUsuario->getEdad());
-        $antiguoUsuario->setUsername($nuevosDatos['tipo']??$antiguoUsuario->getTipo());
-        $antiguoUsuario->setUsername($nuevosDatos['email']??$antiguoUsuario->getEmail());
+        $antiguoUsuario->setEdad($nuevosDatos['edad']??$antiguoUsuario->getEdad());
+        $antiguoUsuario->setTipo(TipoUsuario::stringToUserType($nuevosDatos['tipo']??$antiguoUsuario->getTipo()));
+        $antiguoUsuario->setEmail($nuevosDatos['email']??$antiguoUsuario->getEmail());
         if (isset($nuevosDatos['password'])) {
             $antiguoUsuario->setPassword(password_hash($nuevosDatos['password'],PASSWORD_DEFAULT));
         }

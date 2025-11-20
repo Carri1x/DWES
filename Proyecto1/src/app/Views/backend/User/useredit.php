@@ -104,8 +104,14 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
 
         fetch("http://localhost:8080/user/<?=$usuario->getUuid()?>", requestOptions)
             .then((response) => response.text())
-            .then((result) => console.log(result))
-            .catch((error) => console.error(error));
+            .then((result) => {
+                console.log(result);
+                window.location.href = '/users';
+            })
+            .catch((error) => {
+                    console.error(error);
+                    document.body.innerHTML += error;
+            });
     });
 
 </script>
