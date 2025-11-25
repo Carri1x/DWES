@@ -56,6 +56,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND . 'main.php';
                         .then((result) => {
                             console.log(result);
                             pintarMensaje(result);
+                            evento.target.parentElement.parentElement.remove(); //Eliminamos la tarjeta y su contenido.
                         })
                         .catch((error) => console.error(error))
                         .finally(() => {
