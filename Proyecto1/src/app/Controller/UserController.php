@@ -86,14 +86,15 @@ class UserController implements ControllerInterface
             $userDatabase = UserModel::getUserById($id); //Seleccionamos el usuario de la base de datos.
 
             $usuario = User::editFromArray($userDatabase,$editData);
-
-            //UserModel::updateUser($usuario);
-            http_response_code(201);
-            return json_encode([
-                "errors" => false,
-                "code" => 201
-            ]);
-        }else{
+            //TODO: No me está funcionando, no me cambia el usuario de la base de datos.
+            if(UserModel::updateUser($usuario)){
+                http_response_code(201);
+                return json_encode([
+                    "errors" => false,
+                    "code" => 201
+                ]);
+            }
+        }
             //Aquí tendría un error.
             http_response_code(401);
             return json_encode([
@@ -101,8 +102,6 @@ class UserController implements ControllerInterface
                 "messages" => $errores,
                 "code" => 401
             ]);
-        }
-
     }
 
     function edit($id) //Esta es la ruta ->>> get('user/{id}/edit',[UserController::class, 'edit']);

@@ -8,6 +8,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND . 'main.php';
 ?>
     <div class="container mt-4">
         <div class="row g-4">
+
             <?php foreach ($usuarios as $usuario) { ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card shadow-sm h-100">
@@ -27,7 +28,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND . 'main.php';
 
                             <button class="boton-eliminar-usuario">
                                 Eliminar usuario
-                            </button> <!-- TODO: Aquí tengo que eliminar el usuario en el CONTROLLER (no está hecho) -->
+                            </button>
 
                             <input type="text" hidden="hidden" value="<?= $usuario->getUuid() ?>"/>
                         </div>
@@ -56,7 +57,10 @@ include_once DIRECTORIO_TEMPLATE_BACKEND . 'main.php';
                             console.log(result);
                             pintarMensaje(result);
                         })
-                        .catch((error) => console.error(error));
+                        .catch((error) => console.error(error))
+                        .finally(() => {
+                            window.location.reload();
+                        });
                 });
 
             }

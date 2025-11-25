@@ -107,6 +107,26 @@ class UserModel
         }
     }
 
+
+    public static function updateUser(User $user): bool{
+        try{
+            $conexion = new PDO('mysql:host=mariadb;dbname=proyecto1;', 'alvaro', 'alvaro');
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+        $sql = "UPDATE user SET username = :username, email = :email, edad = :edad, tipo = :tipo WHERE uuid = :uuid ";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindValue('username', $user->getUsername());
+        $stmt->bindValue('email', $user->getEmail());
+        $stmt->bindValue('edad', $user->getEdad());
+        $stmt->bindValue('tipo', $user->getTipo()->name);
+        $stmt->bindValue('uuid', $user->getUuid());
+        $stmt->execute();
+
+        return true; //Se ha podido ejecutar el editado del usuario.
+    }
     /*
     public static function getUserByUsername(string $username):User{
         //TODO: implementarlo con la base de datos.

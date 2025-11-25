@@ -80,7 +80,6 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
         </div>
     </div>
 </div>
-<!--TODO: Aquí es donde tengo que hacer la petición put para modificar al usuario.-->
 <script type="module">
 
     document.getElementById('boton-guardar-cambios').addEventListener('click', (evento) => {
@@ -103,9 +102,17 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
         };
 
         fetch("http://localhost:8080/user/<?=$usuario->getUuid()?>", requestOptions)
-            .then((response) => response.text())
-            .then((result) => console.log(result))
-            .catch((error) => console.error(error));
+            .then((response) => {
+                if(response.ok){
+                    alert('Se ha actualizado al usuario <?=$usuario->getUsername()?>');
+                }
+                console.log(response);
+                window.location.href = '/users';
+            })
+            .catch((error) => {
+                alert('No se ha podido actualizar al usuario <?=$usuario->getUsername()?> ')
+                console.error(error)
+            });
     });
 
 </script>

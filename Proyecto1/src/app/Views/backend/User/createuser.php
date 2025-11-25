@@ -29,7 +29,7 @@ include_once DIRECTORIO_TEMPLATE_BACKEND.'main.php';
         </select>
 
         <br>
-        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+        <button type="submit" class="btn btn-primary" >Crear Usuario</button>
     </form>
 </div>
 <?php
