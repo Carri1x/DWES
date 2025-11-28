@@ -1,3 +1,2 @@
 <?php
-
-const DIR_TEMPLATE = 'app/Views/Templates/';
+const DIR_VIEWS = 'app/Views/';

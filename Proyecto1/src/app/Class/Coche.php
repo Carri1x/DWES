@@ -2,17 +2,20 @@
 
 namespace App\Class;
 
+use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 class Coche implements \JsonSerializable
 {
     private UuidInterface $id;
-    private string $nombre;
+    private string $marca;
+    private string $usuario;
     private array $revisiones;
 
-    public function __construct(UuidInterface $id, string $nombre){
+    public function __construct(UuidInterface $id, string $marca, string $usuario){
         $this->id = $id;
-        $this->nombre = $nombre;
+        $this->marca = $marca;
+        $this->usuario = $usuario;
         $this->revisiones = [];
     }
 
@@ -27,14 +30,23 @@ class Coche implements \JsonSerializable
         return $this;
     }
 
-    public function getNombre(): string
+    public function getMarca(): string
     {
-        return $this->nombre;
+        return $this->marca;
     }
 
-    public function setNombre(string $nombre): Coche
+    public function setMarca(string $marca): Coche
     {
-        $this->nombre = $nombre;
+        $this->marca = $marca;
+        return $this;
+    }
+
+    public function getUsuario(): string{
+        return $this->usuario;
+    }
+
+    public function setUsuario(string $usuario): Coche{
+        $this->usuario = $usuario;
         return $this;
     }
 
@@ -54,8 +66,13 @@ class Coche implements \JsonSerializable
     {
         return[
             'id' => $this->id,
-            'nombre' => $this->nombre,
+            'nombre' => $this->marca,
             'revisiones' => $this->revisiones
         ];
+    }
+
+    public static function build (string $marca, string $usuario): Coche {
+        $uuid = Uuid::uuid4();
+        return new Coche($uuid, $marca, $usuario);
     }
 }

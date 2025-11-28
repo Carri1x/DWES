@@ -1,6 +1,8 @@
 <?php
 include_once 'vendor/autoload.php';
+include_once 'env.php';
 
+use App\Controller\CocheController;
 use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
@@ -9,15 +11,17 @@ $router = new RouteCollector();
 
 /***************************************************************************************/
 
-$router->get('/', function () {
-   echo 'Hello World!';
-});
+$router->get('/', [CocheController::class, 'index']);
 
 /**
  * - get - Vamos a la dirección para que nos enseñe el formulario - index -.
- * Insertar un coche.
+ * Para Insertar un nuevo coche.
  */
-$router->get('/add/coche', [CocheController::class, 'index']);
+$router->get('/add/coche', [CocheController::class, 'formularioCoche']);
+/**
+ * - post - para enviar los datos del coche y guardarlo a la base de datos.
+ */
+$router->post('/add/coche', [CocheController::class, 'store']);
 
 
 /***************************************************************************************/
