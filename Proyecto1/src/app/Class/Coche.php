@@ -7,26 +7,26 @@ use Ramsey\Uuid\UuidInterface;
 
 class Coche implements \JsonSerializable
 {
-    private UuidInterface $id;
+    private UuidInterface $uuid;
     private string $marca;
     private string $usuario;
     private array $revisiones;
 
-    public function __construct(UuidInterface $id, string $marca, string $usuario){
-        $this->id = $id;
+    public function __construct(UuidInterface $uuid, string $marca, string $usuario){
+        $this->uuid = $uuid;
         $this->marca = $marca;
         $this->usuario = $usuario;
         $this->revisiones = [];
     }
 
-    public function getId(): UuidInterface
+    public function getUuid(): UuidInterface
     {
-        return $this->id;
+        return $this->uuid;
     }
 
-    public function setId(UuidInterface $id): Coche
+    public function setUuid(UuidInterface $uuid): Coche
     {
-        $this->id = $id;
+        $this->uuid = $uuid;
         return $this;
     }
 
@@ -65,8 +65,9 @@ class Coche implements \JsonSerializable
     public function jsonSerialize(): mixed
     {
         return[
-            'id' => $this->id,
-            'nombre' => $this->marca,
+            'id' => $this->uuid->toString(),
+            'marca' => $this->marca,
+            'usuario' => $this->usuario,
             'revisiones' => $this->revisiones
         ];
     }

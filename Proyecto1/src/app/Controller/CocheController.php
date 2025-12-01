@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Class\Coche;
+use App\Model\CocheModel;
 
 class CocheController
 {
@@ -19,8 +20,10 @@ class CocheController
      * @return void
      */
     public function store(){
+        //Si existe la marca y el nombre del usuario del coche crearemos el coche y lo mandamos a la base de datos.
         if(isset($_POST["marca"]) && isset($_POST["usuario"])){
             $coche = Coche::build($_POST['marca'], $_POST['usuario']);
+            CocheModel::saveCoche($coche);
 
         }
 

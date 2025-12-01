@@ -14,12 +14,11 @@ class CocheModel
         } catch(PDOException $e){
             return false;
         }
-        $sql = "INSERT INTO coche VALUES (:id, :marca, :usuario, :revisiones)";
+        $sql = "INSERT INTO coche (:uuid, :marca, :usuario) VALUES (:uuid, :marca, :usuario)";
         $stmt = $conexion->prepare($sql);
-        $stmt->bindValue("id", $coche->getId());
+        $stmt->bindValue("uuid", $coche->getUuid());
         $stmt->bindValue("marca", $coche->getMarca());
         $stmt->bindValue("usuario", $coche->getUsuario());
-        $stmt->bindValue("revisiones", $coche->getRevisiones());
         $stmt->execute();
 
         return $stmt->rowCount() > 0;

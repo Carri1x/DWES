@@ -10,7 +10,9 @@ use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 $router = new RouteCollector();
 
 /***************************************************************************************/
-
+/**
+ * Te da la opción de elegir entre insertar un coche o crear una revisión.
+ */
 $router->get('/', [CocheController::class, 'index']);
 
 /**
