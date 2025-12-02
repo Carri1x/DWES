@@ -18,18 +18,17 @@ class RevisionModel
         }
         $correctaEjecucion = false;
 
-        $sql = "INSERT INTO revision VALUES (:uuid, :nombre, :precio)";
+        $sql = "INSERT INTO revision (uuid, nombre, precio, uuid_coche)
+        VALUES (:uuid, :nombre, :precio, :uuid_coche)";
         $stmt = $conexion->prepare($sql);
+
         $stmt->bindValue(":uuid", $revision->getUuid());
         $stmt->bindValue(":nombre", $revision->getNombre());
         $stmt->bindValue(":precio", $revision->getPrecio());
+        $stmt->bindValue(":uuid_coche", $coche->getUuid());
+
         $stmt->execute();
 
-        $sql = "INSERT INTO coche_revision VALUES (:uuid_coche, :uuid_revision)";
-        $stmt = $conexion->prepare($sql);
-        $stmt->bindValue(":uuid_coche", $coche->getUuid());
-        $stmt->bindValue(":uuid_revision", $revision->getUuid());
-        $stmt->execute();
 
         return $stmt->rowCount() > 0;
     }

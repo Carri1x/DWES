@@ -6,7 +6,7 @@
     <title>Insertar Coche</title>
 </head>
 <body>
-<form action="/add/coche" method="POST">
+<form action="/add/revision" method="POST">
     <label for="nombre">Nombre de la revisión: </label>
     <input type="text" name="nombre" placeholder="Introduce el nombre de la revisión">
 

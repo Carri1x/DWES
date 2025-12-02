@@ -13,8 +13,9 @@ class RevisionController
         include_once DIR_VIEWS.'formularioInsertarRevision.php';
     }
     public function add(){
-        if(isset($_POST['nombre']) && isset($_POST['precio']) && isset($_POST['uuidCoche'])){
-            $coche = CocheModel::getCocheByUuid($_POST['uuidCoche']);
+        echo"Por lo menos esta entrando";
+        if(isset($_POST['nombre']) && isset($_POST['precio'])){
+            $coche = CocheModel::getCocheByMarca($_POST['marca']);
             $coche = Coche::fromArrayToCoche($coche);
             if($coche != null){
                 $precio = intval($_POST['precio']); //Esto hace que pueda parsear de string a int
@@ -26,7 +27,11 @@ class RevisionController
                 } else {
                     echo "Ocurrio un error al guardar la revision";
                 }
+            } else {
+                echo "El coche es null";
             }
+        } else {
+            echo "No están entrando bien los datos del formulario";
         }
     }
 }

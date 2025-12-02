@@ -2,8 +2,8 @@
 include_once 'vendor/autoload.php';
 include_once 'env.php';
 
-use app\Controller\CocheController;
-use app\Controller\RevisionController;
+use App\Controller\CocheController;
+use App\Controller\RevisionController;
 use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\Dispatcher;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;

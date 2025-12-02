@@ -44,5 +44,12 @@ alter table coche_revision add constraint fk_coche_revision_coche foreign key (u
 alter table coche_revision add constraint fk_coche_revision_revision foreign key (uuid_revision) references revision(uuid);
 
 show tables;
-
 select * from coche;
+select * from revision;
+
+DROP TABLE coche_revision;
+ALTER TABLE revision
+    ADD uuid_coche VARCHAR(60);
+ALTER TABLE revision
+    ADD CONSTRAINT fk_revision_coche
+        FOREIGN KEY (uuid_coche) REFERENCES coche(uuid);
