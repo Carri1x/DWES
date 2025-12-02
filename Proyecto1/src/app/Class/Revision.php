@@ -10,12 +10,14 @@ class Revision implements \jsonSerializable
     private UuidInterface $uuid;
     private string $nombre;
     private int $precio;
+    private Coche $coche;
 
-    public function __construct(string $nombre, int $precio){
+    public function __construct(string $nombre, int $precio, Coche $coche){
         //Aquí delegamos al código que ponga el uuid que considere.
         $this->uuid = Uuid::uuid4();
         $this->nombre = $nombre;
         $this->precio = $precio;
+        $this->coche = $coche;
     }
 
     public function getUuid(): UuidInterface
@@ -51,13 +53,23 @@ class Revision implements \jsonSerializable
         return $this;
     }
 
+    public function getCoche(): Coche{
+        return $this->coche;
+    }
+
+    public function setCoche(Coche $coche): Revision{
+        $this->coche = $coche;
+        return $this;
+    }
 
     public function jsonSerialize(): mixed
     {
         return [
             'id' => $this->uuid->toString(),
             'nombre' => $this->nombre,
-            'precio' => $this->precio
+            'precio' => $this->precio,
+            'coche' => $this->coche->jsonSerialize()
         ];
     }
+
 }

@@ -76,4 +76,10 @@ class Coche implements \JsonSerializable
         $uuid = Uuid::uuid4();
         return new Coche($uuid, $marca, $usuario);
     }
+
+
+
+    public static function fromArrayToCoche(array $array): Coche {
+        return new Coche(Uuid::fromString($array['uuid']), $array['marca'], $array['usuario']);
+    }
 }

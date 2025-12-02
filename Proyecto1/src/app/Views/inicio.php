@@ -18,6 +18,9 @@
 <form action="/add/revision" method="GET">
     <input type="submit" value="Insertar Revisión">
 </form>
+<form action="/coches" method="GET">
+    <input type="submit" value="Mostrar todos los coches">
+</form>
 
 </body>
 </html>

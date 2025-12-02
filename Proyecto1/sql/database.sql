@@ -1,5 +1,8 @@
 DELIMITER //
 drop table if exists user;
+drop table if exists coche;
+drop table if exists revision;
+drop table if exists coche_revision;
 //
 
 create table user(
@@ -15,6 +18,9 @@ alter table user add constraint pk_user primary key (uuid);
 alter table user add constraint uk_user_username unique (username);
 alter table user add constraint uk_user_email unique (email);
 //
+
+#use proyecto1; #Esto se hace para que podamos usar la base de datos en otro dispositivo diferente (que no tiene la base de datos) al que solemos trabajar.
+#show tables;
 
 create table coche(
     uuid varchar(60),
@@ -38,3 +44,5 @@ alter table coche_revision add constraint fk_coche_revision_coche foreign key (u
 alter table coche_revision add constraint fk_coche_revision_revision foreign key (uuid_revision) references revision(uuid);
 
 show tables;
+
+select * from coche;

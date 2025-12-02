@@ -2,10 +2,10 @@
 include_once "vendor/autoload.php";
 include_once "env.php";
 //Directiva para insertar o utilizar la clase RouteCollector (End Points).
-use App\Controller\UserController;
+use app\Controller\UserController;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 use Phroute\Phroute\RouteCollector;
-use App\Controller\DirectorController;
+use app\Controller\DirectorController;
 
 $router = new RouteCollector();
 //Definir las rutas de mi aplicación.
